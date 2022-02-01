@@ -4,7 +4,10 @@ from openpyxl import Workbook, load_workbook
 import smtplib
 from email.message import EmailMessage
 import imghdr
+import pandas
 
+def searchName(argument):
+    pass
 
 # send the Email
 def sendMessage(subject, body, receipient_email, receipient_name, image):
