@@ -16,13 +16,17 @@ Cert-Gen is a cross-platform, Python-based tool that helps in generating certifi
 
 ## Requirements
 - Works with Windows, Linux and Mac
-- Python 3.0 or greater
-- Git (version control system)
+- [Python](https://www.python.org/downloads/) 3.0 or greater
+- [Git](https://git-scm.com/downloads)
+
+
 ## Installation
 1. Go to the folder where you want to store Cert-Gen.
 1. Open the commandline from the chosen folder.
 1. Write the following command on the commandline:<br/> ```git clone https://github.com/Biowulf21/Cert-Gen.git```
 1. Voilà, you know have a copy of the program!
+
+
 ## Use-Cases
 Cert-Gen is primarily used in the following use-cases:
 - Certificate Generation and Sending
@@ -39,5 +43,9 @@ __Note: Cert-Gen can be used in conjunction with any task that requires the name
 ## Usage
 
 # FAQs
+- __Q:__ Does this program have a Graphical User Interface? <br/>
+__A:__ No, a GUI is definitely planned, but right now it's commandline only. It's very easy to use, though.
+
+
 
 #### This software was created by James Jilhaney
