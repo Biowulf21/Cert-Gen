@@ -41,11 +41,28 @@ __Note: Cert-Gen can be used in conjunction with any task that requires the name
 
 - I will be working on making Cert-Gen an excecutable file ~~as I cannot, for the life of me, figure out how to make that work with Python~~ for easier installation.
 ## Usage
-
+1. Download all necessary files and dependencies from steps above.
+1. Input the names of the receipients on column A and their emails on column B. Make sure the emails are aligned respectively.
+1. Make sure to __save__ the names.xlsx file. This is important as the program will only detect the values inputted in the worksheet when it is saved.
+__Note:__ The data in the sheet should have no blank cells in between. Though this won't cause any crashes, the program will use a None value to create a certificate and send it to an 'None' email.
+1. Open the commandline from the folder where Cert-Gen is located at.
+### On Windows:
+	1. Open the folder where Cert-Gen is.
+	1. Right click on any blank space in the file manager.
+	1. Click on 'Open in terminal'
+1. Run the command ```python3 certificate.py```
+1. You should now see the program generate the certificates and send them to their respective emails :)
 # FAQs
 - __Q:__ Does this program have a Graphical User Interface? <br/>
 __A:__ No, a GUI is definitely planned, but right now it's commandline only. It's very easy to use, though.
 
+- __Q:__ 
+__A:__
+- __Q:__ 
+__A:__
 
-
+- __Q:__ 
+__A:__
+- __Q:__ 
+__A:__
 #### This software was created by James Jilhaney
