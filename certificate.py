@@ -5,16 +5,20 @@ import smtplib
 from email.message import EmailMessage
 import imghdr
 import pandas
+import os
+from dotenv import load_dotenv
 
 def searchName(argument):
     pass
 
 # send the Email
 def sendMessage(subject, body, receipient_email, receipient_name, image):
+    load_dotenv()
     sendcount = 0
-    sender = 'gdscxavier.exrel@gmail.com'
-    password = 'gdscexrel@21'
-   # all = len(receipients)
+    print(os.getenv('EMAIL'))
+    sender = os.getenv('EMAIL')
+    password = os.getenv('PASSWORD')
+    # all = len(receipients)
     # print(str(all) + " recipients found.\n")
     sent = 0
     failedTo = []
@@ -39,8 +43,9 @@ def sendMessage(subject, body, receipient_email, receipient_name, image):
 
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+            print('Logging in...')
             smtp.login(sender, password)
-            print('has logged in hehe')
+            print('Sending...')
             smtp.send_message(message)
             print(f'sent to {receipient_name}')
 
@@ -51,13 +56,14 @@ def sendMessage(subject, body, receipient_email, receipient_name, image):
 
 
 def advisory(receipient_email, receipient_name, image):
-    subject = "Tech-Knowledge-G: Cyber Security Certificate"
-    body = "Good day, GDSC Member! \n\n" \
-           "Thank you for joining our first ever GDSC Xavier Tech-Knowlegde-G Seminar. We would like to show our appreciation by presenting you your certificate of participation for the event as we really appreciate your time and effort in joining. \n\n" \
-        "We hope to see you in our upcoming events next year.\n\n" \
-           "Thank you again and Merry Christmas!\n\n" \
-           "Warmest Regards, \n" \
-           "James Jilhaney, GDSC Xavier Chief Technology Officer"
+    body = open('body.txt')
+    bodyString = body.read()
+    subject = open('subject.txt')
+    subjectString = subject.read()
+    
+    subject = subjectString
+    print(body.read())
+    body = bodyString 
 
     sendMessage(subject=subject, body=body, receipient_email=receipient_email,
                 receipient_name=receipient_name, image=image)
@@ -74,12 +80,13 @@ print(f"max row count is: {row_count}")
 
 # iterates over all the rows and returns a tuple
 for row in ws.iter_rows(min_row=2, max_row=row_count):
+    print('Generating emails...')
     # open the certificate template
     image = Image.open('participants.png')
     draw = ImageDraw.Draw(image)
     # choose font and input the Path as well as size of it
     font = ImageFont.FreeTypeFont(
-        '/storage/Python/Certificate/opensans.ttf', size=60)
+       'opensans.ttf', size=60)
     # draw the name of the participant to the template based on the x and y axis of image
     draw.text(xy=(725, 680), text='{}'.format(
         row[1].value), fill=(255, 255, 255), font=font)

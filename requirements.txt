@@ -1,0 +1,4 @@
+openpyxl==3.0.10
+pandas==1.4.3
+Pillow==9.2.0
+python-dotenv==0.20.0
