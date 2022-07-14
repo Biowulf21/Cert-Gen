@@ -24,7 +24,7 @@ Cert-Gen is a cross-platform, Python-based tool that helps in generating certifi
 1. Go to the folder where you want to store Cert-Gen.
 1. Open the commandline from the chosen folder.
 1. Write the following command on the commandline:<br/> `git clone https://github.com/Biowulf21/Cert-Gen.git`
-1. type `python3 install -r requirements.txt`
+1. Type `python3 install -r requirements.txt`
 1. Voilà, you know have a copy of the program!
 
 ## Use-Cases
