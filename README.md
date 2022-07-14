@@ -78,7 +78,7 @@ Make sure to login to your google account. Go to the security tab and turn the `
 
 - **Q:** How do I change the email subject and body?  
   **A:** You can do this by changing the contents of the subject.txt and body.txt files respectively
-- **Q:** I don't like the font, how do I change it?
+- **Q:** I don't like the font, how do I change it?  
   **A:** simply replace the `.opensans.ttf` file. make sure to rename the file to `.opensans.ttf` or replace the variable name in the code.
 
 - **Q:** The names of the participants are not properly aligned. What can I do?  
