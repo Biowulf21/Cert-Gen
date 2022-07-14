@@ -60,7 +60,7 @@ PASSWORD=foo
 
 **Note:** Make sure to replace "foo" with the values you'll be using for the email and password. Also make sure that the values are not enclosed in quotation marks.
 
-Make sure to login to your google account. Go to the security tab and turn the `Less Secure Apps Access` **on**. For more information access this [link](https://support.google.com/accounts/answer/6010255?hl=en).
+Make sure to login to your google account. Go to the security tab and turn the `Less Secure Apps Access` **on**. For more information, access this [link](https://support.google.com/accounts/answer/6010255?hl=en).
 
 ### On Windows:
 
