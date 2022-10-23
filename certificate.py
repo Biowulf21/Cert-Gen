@@ -1,10 +1,8 @@
 from PIL import Image, ImageDraw, ImageFont
-import pandas as pd
-from openpyxl import Workbook, load_workbook
+from openpyxl import load_workbook
 import smtplib
 from email.message import EmailMessage
 import imghdr
-import pandas
 import os
 from dotenv import load_dotenv
 
@@ -15,8 +13,6 @@ def sendMessage(subject, body, receipient_email, receipient_name, image):
     sendcount = 0
     sender = os.getenv('EMAIL')
     password = os.getenv('PASSWORD')
-    # all = len(receipients)
-    # print(str(all) + " recipients found.\n")
     sent = 0
     failedTo = []
 
@@ -74,11 +70,9 @@ directory = {}
 FONT = os.getenv('FONT')
 # gets the length of the rows of the file to limit the iteration below
 row_count = ws.max_row
-print(f"max row count is: {row_count}")
 
 # iterates over all the rows and returns a tuple
 for row in ws.iter_rows(min_row=2, max_row=row_count):
-    print('Generating emails...')
     # open the certificate template
     image = Image.open('participants.png')
     draw = ImageDraw.Draw(image)
