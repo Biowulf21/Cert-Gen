@@ -54,6 +54,7 @@ Cert-Gen is primarily used in the following use-cases:
 1. Create a `.env` file in the root of the project using the following syntax:
 
 ```
+FONT=foo
 EMAIL=foo
 PASSWORD=foo
 ```
