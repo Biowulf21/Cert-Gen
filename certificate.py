@@ -1,4 +1,5 @@
 from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 from PIL import Image, ImageDraw, ImageFont
 from openpyxl import load_workbook
 import smtplib
@@ -25,6 +26,7 @@ def sendMessage(subject, body, receipient_email, receipient_name, image):
     message['Subject'] = subject
     message['From'] = sender
     message['To'] = sendTo
+    message.attach(MIMEText(body))
     sendcount += 1
     with open(f'Certificates/{receipient_name}.png', 'rb') as f:
         img_attachment = f.read()
