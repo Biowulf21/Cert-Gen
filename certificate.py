@@ -28,6 +28,7 @@ def sendMessage(subject, body, receipient_email, receipient_name, image):
     message['To'] = sendTo
     message.attach(MIMEText(body))
     sendcount += 1
+
     with open(f'Certificates/{receipient_name}.png', 'rb') as f:
         img_attachment = f.read()
         file_type = imghdr.what(f.name)
@@ -93,14 +94,14 @@ if (hasCertificateDir == False):
 
 # iterates over all the rows and returns a tuple
 for row in ws.iter_rows(min_row=2, max_row=row_count):
-   # if path == CerticatesPath:
-
     # open the certificate template
     image = Image.open('participants.png')
     draw = ImageDraw.Draw(image)
+
     # choose font and input the Path as well as size of it
     font = ImageFont.FreeTypeFont(
        'opensans.ttf', size=60)
+
     # draw the name of the participant to the template based on the x and y axis of image
     draw.text(xy=(725, 680), text='{}'.format(
         row[1].value), fill=(255, 255, 255), font=font)
